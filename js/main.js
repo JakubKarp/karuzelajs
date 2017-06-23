@@ -1,37 +1,90 @@
-$(function(){
-	var carouselList = $("#carousel ul");
-	setInterval(zmienFoto, 2000); 
-		function zmienFoto (){ 
-		carouselList.animate({'marginLeft':-600}, 500, zmienPierwszeFoto);	
-		};
-		function zmienPierwszeFoto (){
-			var pierwszeFoto = carouselList.find("li:first");
-			var ostatnieFoto = carouselList.find("li:last");
-			ostatnieFoto.after(pierwszeFoto);
-			carouselList.css({marginLeft:0});
-		};
-		/*var kropki = $(".dots");
-		var kropka = $(".pnedot");
-		*/
-	
-	//var kropkaAktywna = kropka.css("backgroundColor", "black");
-		/*setInterval(karuzelaKropek, 2000); 
-		function karuzelaKropek (){ 
-		kropki.toggle({kropka, kropkaAktywna}, zmienKropki);	
-		};*/
-	
-		/*function zmienKropki () {
-		var pierwszaKropka = kropki.find("onedot:first");
-		var ostatniaKropka = kropki.find("onedot:last");
-		ostatniaKropka.after(pierwszaKropka);
-		};	*/ 
-	/*var kropkaAktywna = .css("backgroundColor", "black");
-	var kropka = $(".onedot");
-	kropka.click(function(){
-		kropka.css("backgroundColor", "black");				
-	});*/
-			
-	
-	
+//deklaracja zmiennych
+/*var carousel = $("#carousel");
+    var carouselList = $(".ul-class");
+    var carouselDots = $(".dots");*/
+  
+
+var carousel = document.getElementById("carousel");
+//var carouselList = document.getElementsByClassName('ulcarousel');
+var carouselNav = document.getElementsByClassName('navdot');
+
+//ile obrazów tyle kropek
+/*carouselList.find("li").each(function(){
+       //console.log("test");
+        carouselDots.append("<li></li>");
+    });*/
+var test = document.querySelectorAll("ul.ulcarousel > li");
+    console.log(test.length);
+//carouselList.forEach(){
+  //  carouselNav.innerHTML("<li></li>");
+//};
+
+
+/*
+
+//oryginał
+$(function() {
+      
+    
+    
+    //pierwsza kropka aktywna
+
+    var dot = $(".dots li");
+    dot.first().addClass("active");
+    
+    //po kliknięciu zmiana statusu kropki
+    dot.click(function() {
+        var target = $(this).index();
+        //console.log(target);
+        slideChange(target);
+    });
+    
+    //slajdowanie zdjęć po kliknięciu kolejnych kropek
+    function slideChange(target) {
+        carouselList.stop().animate({'left': -600 * target });
+        dot.removeClass('active').eq(target).addClass('active');
+        resetInterval();
+    };
+    
+    //slajdowanie automatyczne
+    function slider(){     
+        target = dot.siblings('.active').index();
+        target == dot.length - 1 ? target = 0 : target += 1;
+        slideChange(target);
+        
+    };
+    //ustawienie interwału
+    interval = setInterval(function(){slider()}, 2000);
+    
+    
+    //prawy i lewy element do klikania
+    $('.right').click(function(){
+        target = target = dot.siblings('.active').index();
+        target == dot.length - 1 ? target = 0 : target += 1;
+        slideChange(target);
+    });
+    $('.left').click(function(){
+        target = target = dot.siblings('.active').index();
+        target == 0 ? target = dot.length - 1 : target -= 1;
+        slideChange(target);
+        
+    });
+    
+    //funkcja kasująca slajdowanie automamatyczne - wstawiona w momencie kliknięcia kolejnych kropek - patrz linia 28
+    function resetInterval(){
+        clearInterval(interval);
+        interval = setInterval(function(){slider();}, 2000);
+    };
+    
 });
-	
+
+*/
+
+
+
+
+
+
+
+
+
